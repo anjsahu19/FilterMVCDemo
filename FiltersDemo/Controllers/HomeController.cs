@@ -9,7 +9,7 @@ namespace FiltersDemo.Controllers
 {
     [Auth]
     [Excep]
-    [Action][HandleError]
+    [Action][HandleError] [Result]
     public class HomeController : Controller
     {
         [OutputCache(Duration = 10)]

@@ -198,6 +198,7 @@
     <Compile Include="AuthData\AuthAttribute.cs" />
     <Compile Include="AuthData\AuthorizeAtt.cs" />
     <Compile Include="AuthData\ExcepAttribute.cs" />
+    <Compile Include="AuthData\ResultAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
