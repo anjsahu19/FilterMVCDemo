@@ -7,19 +7,22 @@ using System.Web.Mvc;
 
 namespace FiltersDemo.Controllers
 {
-    [Auth][Excep][Action]
+    [Auth]
+    [Excep]
+    [Action][HandleError]
     public class HomeController : Controller
     {
+        [OutputCache(Duration = 10)]
         public ActionResult Index()
         {
-            ViewBag.Message = ViewBag.OnActionExecuted;
+            ViewBag.Message = ViewBag.OnActionExecuting;
             return View();
         }
         [Authorize(Users = "abc@gmail.com")]
         public ActionResult About()
         {
-           // ViewBag.Message = "abc@gmail.com Allowed!";
-
+            // ViewBag.Message = "abc@gmail.com Allowed!";
+            ViewBag.Message = ViewBag.OnActionExecuting;
             return View();
         }
         [Authorize(Users = "anjsahu19@gmail.com")]
@@ -27,15 +30,15 @@ namespace FiltersDemo.Controllers
         {
             try
             {
-               // ViewBag.Message = "anjsahu19@gmail.com Allowed!";
+                // ViewBag.Message = "anjsahu19@gmail.com Allowed!";
                 int i = 0;
-                int a = 5 / i;              
+                int a = 5 / i;
             }
             catch
             {
-                throw;              
+                throw;
             }
-            return View(); 
+            return View();
         }
 
         public ActionResult Error()
